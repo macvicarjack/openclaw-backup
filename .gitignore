@@ -1,0 +1,45 @@
+# Never backup secrets/auth/session data
+identity/
+credentials/
+devices/
+auth*
+*token*
+*secret*
+*key*
+*.pem
+*.p12
+*.pfx
+
+# OpenClaw agent/session content often contains keys/tokens
+agents/
+subagents/
+browser/
+media/
+logs/
+completions/
+delivery-queue/
+*.jsonl
+*.jsonl.deleted*
+
+# Rolling archives/binaries
+snapshots/
+workspace/
+workspace_*
+workspace-*
+extensions/
+extensions-backups/
+cron/
+*.tgz
+*.tar
+*.zip
+*.dmg
+*.pkg
+
+# OS/editor junk
+.DS_Store
+.vscode/
+
+# Do not commit real config with secrets
+openclaw.json
+
+openclaw.json

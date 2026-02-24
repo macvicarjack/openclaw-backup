@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "socket": {
+    "path": "/Users/floydbot/.openclaw/exec-approvals.sock",
+    "token": "jiwdRPPkmNLHR3J8-wUt6ieuTLLXSl6b"
+  },
+  "defaults": {},
+  "agents": {
+    "*": {
+      "allowlist": [
+        {
+          "pattern": "*",
+          "lastUsedAt": 1770317806127,
+          "id": "43b3e683-677a-49a8-a69c-0cf6caf71640"
+        }
+      ]
+    },
+    "business": {
+      "allowlist": [
+        {
+          "pattern": "*",
+          "lastUsedAt": 1770317912787,
+          "id": "396e3335-30a8-4454-ab95-de2de795929e"
+        },
+        {
+          "pattern": "/usr/bin/uname",
+          "lastUsedAt": 1770318742248,
+          "id": "bdfd4295-bb24-4cba-b4fe-018e12b55a93",
+          "lastUsedCommand": "uname -a",
+          "lastResolvedPath": "/usr/bin/uname"
+        },
+        {
+          "pattern": "/usr/bin/sw_vers",
+          "lastUsedAt": 1770318806770,
+          "id": "ac2c3fab-f239-4c77-8521-e8d2c694876e",
+          "lastUsedCommand": "sw_vers",
+          "lastResolvedPath": "/usr/bin/sw_vers"
+        },
+        {
+          "pattern": "/usr/sbin/sysctl",
+          "lastUsedAt": 1770318783359,
+          "id": "39f80e4f-fe0e-4a18-ac00-6aa0e8c73858"
+        },
+        {
+          "pattern": "/usr/bin/lsof",
+          "lastUsedAt": 1770318784577,
+          "id": "3bab2854-08a8-4f44-851c-20845172812f"
+        },
+        {
+          "pattern": "/usr/sbin/netstat",
+          "lastUsedAt": 1770318785793,
+          "id": "f84f7aaa-b6b8-4ffa-840f-fcd6033a00cd"
+        },
+        {
+          "pattern": "/usr/bin/df",
+          "lastUsedAt": 1770318787007,
+          "id": "3b9eadb8-1204-4862-ab79-52115e533c2e"
+        },
+        {
+          "pattern": "/usr/sbin/diskutil",
+          "lastUsedAt": 1770318788224,
+          "id": "cecf31e1-abbd-45eb-9355-9b1cafbd6b66"
+        },
+        {
+          "pattern": "/usr/bin/tmutil",
+          "lastUsedAt": 1770318806915,
+          "id": "6ded4fe9-1841-4f0c-b98c-3257dac24e90",
+          "lastUsedCommand": "tmutil status",
+          "lastResolvedPath": "/usr/bin/tmutil"
+        },
+        {
+          "pattern": "/usr/libexec/ApplicationFirewall/socketfilterfw",
+          "lastUsedAt": 1770319530599,
+          "id": "234aa633-9109-4d6d-a999-ce93632deff4",
+          "lastUsedCommand": "/usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate",
+          "lastResolvedPath": "/usr/libexec/ApplicationFirewall/socketfilterfw"
+        },
+        {
+          "pattern": "/opt/homebrew/bin/openclaw *",
+          "lastUsedAt": 1770318941314,
+          "id": "bc2d8bab-0153-4e70-8731-c629767a4a0e"
+        },
+        {
+          "pattern": "/usr/bin/sudo",
+          "lastUsedAt": 1770319525504,
+          "id": "1f951888-dd9b-4978-a1bd-8b54736117c0",
+          "lastUsedCommand": "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on",
+          "lastResolvedPath": "/usr/bin/sudo"
+        }
+      ]
+    },
+    "main": {
+      "allowlist": [
+        {
+          "pattern": "*",
+          "lastUsedAt": 1770412699547,
+          "id": "0e424100-7142-4257-92f1-48357dc1ec4a"
+        },
+        {
+          "id": "0be56d3d-1cb1-44b2-a03f-7af55ad9b34a",
+          "pattern": "/usr/bin/tail",
+          "lastUsedAt": 1770415271710,
+          "lastUsedCommand": "tail -100 /tmp/openclaw/openclaw-2026-02-06.log",
+          "lastResolvedPath": "/usr/bin/tail"
+        },
+        {
+          "id": "c584e559-f10a-4c6c-8f45-ecb5e39bd083",
+          "pattern": "/usr/bin/grep",
+          "lastUsedAt": 1770412933674,
+          "lastUsedCommand": "tail -100 /tmp/openclaw/openclaw-2026-02-06.log | grep -i heartbeat",
+          "lastResolvedPath": "/usr/bin/tail"
+        },
+        {
+          "id": "f9ffcc0e-ebcd-4ef3-aece-96b95cbbea41",
+          "pattern": "/usr/bin/which",
+          "lastUsedAt": 1770412955089
+        }
+      ]
+    }
+  }
+}

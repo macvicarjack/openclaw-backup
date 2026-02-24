@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "socket": {
+    "path": "/Users/floydbot/.openclaw/exec-approvals.sock",
+    "token": "Q6LuQ90taDLtQLogNNBwjYZzuWHYjQw3"
+  },
+  "defaults": {},
+  "agents": {
+    "background": {
+      "patterns": [
+        {
+          "allow": true,
+          "argv": [
+            "*"
+          ]
+        }
+      ]
+    },
+    "main": {
+      "patterns": [
+        {
+          "allow": true,
+          "argv": [
+            "*"
+          ]
+        }
+      ],
+      "ask": "off",
+      "askFallback": "allow",
+      "autoAllowSkills": true
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "agents": {
+    "defaults": {
+      "compaction": {
+        "memoryFlush": {
+          "enabled": true
+        },
+        "mode": "safeguard"
+      },
+      "contextPruning": {
+        "keepLastAssistants": 5,
+        "mode": "cache-ttl",
+        "ttl": "30m"
+      },
+      "heartbeat": {
+        "every": "0",
+        "model": "openrouter/openai/gpt-4o-mini"
+      },
+      "maxConcurrent": 4,
+      "memorySearch": {
+        "experimental": {
+          "sessionMemory": true
+        },
+        "sources": [
+          "memory",
+          "sessions"
+        ]
+      },
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "workspace": "/home/node/.openclaw/workspace"
+    },
+    "list": [
+      {
+        "id": "main",
+        "model": "openrouter/google/gemini-3-flash-preview",
+        "subagents": {
+          "allowAgents": [
+            "business",
+            "personal",
+            "work",
+            "background"
+          ],
+          "model": "openrouter/google/gemini-3-flash-preview"
+        },
+        "workspace": "/home/node/.openclaw/workspace"
+      },
+      {
+        "id": "business",
+        "model": "openrouter/google/gemini-3-flash-preview",
+        "workspace": "/home/node/.openclaw/workspace"
+      },
+      {
+        "id": "personal",
+        "model": "anthropic/claude-sonnet-4-5",
+        "workspace": "/home/node/.openclaw/workspace"
+      },
+      {
+        "id": "work",
+        "model": "openrouter/google/gemini-3-flash-preview",
+        "workspace": "/home/node/.openclaw/workspace"
+      },
+      {
+        "id": "background",
+        "model": "openrouter/openai/gpt-4o-mini",
+        "workspace": "/home/node/.openclaw/workspace"
+      }
+    ]
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "mode": "api_key",
+        "provider": "anthropic"
+      },
+      "openrouter:default": {
+        "mode": "api_key",
+        "provider": "openrouter"
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "id": "1468420922284441713",
+          "kind": "channel"
+        }
+      }
+    },
+    {
+      "agentId": "business",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "id": "1468420923810906193",
+          "kind": "channel"
+        }
+      }
+    },
+    {
+      "agentId": "personal",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "id": "1468420924448706632",
+          "kind": "channel"
+        }
+      }
+    },
+    {
+      "agentId": "work",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "id": "1468420925840953507",
+          "kind": "channel"
+        }
+      }
+    },
+    {
+      "agentId": "personal",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "id": "1471321679937409246",
+          "kind": "channel"
+        }
+      }
+    }
+  ],
+  "browser": {
+    "defaultProfile": "chrome",
+    "enabled": true
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "groupPolicy": "allowlist",
+      "guilds": {
+        "1468060708494115055": {
+          "channels": {
+            "*": {
+              "allow": true
+            }
+          },
+          "requireMention": false,
+          "slug": "floyd-bot"
+        }
+      },
+      "streamMode": "off",
+      "token": "__REDACTED__"
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "ownerDisplay": "raw",
+    "restart": true
+  },
+  "cron": {
+    "enabled": true
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "__REDACTED__"
+    },
+    "bind": "lan",
+    "mode": "local",
+    "nodes": {
+      "allowCommands": []
+    },
+    "port": 18789,
+    "reload": {
+      "mode": "hybrid"
+    },
+    "remote": {
+      "sshTarget": "floydbot@openclaw.local",
+      "url": "ws://openclaw.local:18789"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "meta": {
+    "lastTouchedAt": "2026-02-24T13:21:33.600Z",
+    "lastTouchedVersion": "2026.2.21-2"
+  },
+  "plugins": {
+    "entries": {
+      "discord": {
+        "enabled": true
+      },
+      "kimi-claw": {
+        "config": {
+          "bridge": {
+            "deviceId": "Mac",
+            "historyPendingTimeoutMs": 15000,
+            "instanceId": "connector-Mac",
+            "kimiapiHost": "https://www.kimi.com/api-claw",
+            "mode": "acp",
+            "token": "__REDACTED__",
+            "url": "wss://www.kimi.com/api-claw/bots/agent-ws"
+          },
+          "gateway": {
+            "agentId": "main",
+            "token": "__REDACTED__",
+            "url": "ws://127.0.0.1:18789"
+          },
+          "log": {
+            "enabled": false
+          },
+          "retry": {
+            "baseMs": 1000,
+            "maxAttempts": 0,
+            "maxMs": 600000
+          }
+        },
+        "enabled": false
+      }
+    },
+    "load": {
+      "paths": []
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "tools": {
+    "agentToAgent": {
+      "enabled": true
+    },
+    "exec": {
+      "ask": "off",
+      "host": "node",
+      "node": "baa2c9bb7d6259bbe2630850db5b4fffa19effcb9cc5f46af98a05f87c51438a",
+      "security": "full"
+    },
+    "subagents": {
+      "tools": {
+        "alsoAllow": [
+          "nodes"
+        ]
+      }
+    },
+    "web": {
+      "search": {
+        "apiKey": "__REDACTED__"
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-21T18:28:41.392Z",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local",
+    "lastRunVersion": "2026.2.6-3"
+  }
+}
