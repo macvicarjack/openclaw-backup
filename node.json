@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "nodeId": "9c6860306219dd047d663159895fa8281395ac34eaa351b8495d088cc785dc4e",
+  "displayName": "Floyd's Mac mini",
+  "gateway": {
+    "host": "127.0.0.1",
+    "port": 18789,
+    "tls": false
+  }
+}
